@@ -323,3 +323,22 @@ private void configurarVentanita()
 
 
 }
+
+
+/*  EJEMPLO
+
+
+ @Override
+    public void actionPerformed(ActionEvent e) {
+       Calculadora calcu = new Calculadora();
+        
+        double n1, n2;
+        
+        if(e.getSource() == suma)
+	{
+            n1 = Integer.parseInt(caja.getText());
+            n2 = Integer.parseInt(caja2.getText());
+            resul.setText(Double.toString(calcu.suma(n1, n2)));
+        }
+
+*/
