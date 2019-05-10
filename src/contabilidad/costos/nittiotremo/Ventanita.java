@@ -3,12 +3,12 @@ package contabilidad.costos.nittiotremo;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javafx.*;
+import javax.swing.JOptionPane;
 
 public class Ventanita extends JFrame implements ActionListener
 {
-    float materia1,materia2,materia3,mano1,mano2,mano3,codir1,codir2,codir3,coind1,coind2,coind3,luz,agua,gas,dias1,dias2,dias3;
-    float Vtotaldiario1,Vtotaldiario2,Vtoltadiario3,Vtotalmensual1,Vtotalmensual2,Vtotalmensual3,Vrestotal;
+    float materia1,materia2,materia3,mano1,mano2,mano3,codir1,codir2,codir3,coind1,coind2,coind3,luz,agua,gas,dias1,dias2,dias3,kil1,kil2,kil3;
+    float Vtotaldiario1,Vtotaldiario2,Vtotaldiario3,Vtotalmensual1,Vtotalmensual2,Vtotalmensual3,Vresfinal,Vtotalunitario1,Vtotalunitario2,Vtotalunitario3;
 
                             private JLabel materia_prima;
                             private JLabel mano_de_obra;
@@ -264,7 +264,7 @@ private void configurarVentanita()
                            
                            //extras y boton
                            
-                            txtagua.setText("Agua/Mes ");
+                         /*   txtagua.setText("Agua/Mes ");
                           txtagua.setBounds(50,425,100,25);
                           cajaagua.setBounds(135,425,100,25);
                           
@@ -275,9 +275,11 @@ private void configurarVentanita()
                            txtgas.setText("Gas/Mes ");
                            txtgas.setBounds(440,425,100,25);
                             cajagas.setBounds(555,425,100,25);
+                           
+                           */
                             
                          aceptar.setText("Aceptar  ");
-                        aceptar.setBounds(25,480,800,35);
+                        aceptar.setBounds(25,425,800,35);
                         aceptar.addActionListener(this);   
                                     
                                     
@@ -346,8 +348,88 @@ private void configurarVentanita()
 
 
     @Override
-    public void actionPerformed(ActionEvent ae) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void actionPerformed(ActionEvent click) {
+        
+        if(click.getSource()==aceptar)
+        {
+           // variablle=INteger.parseInt(caja.getText())
+            
+            
+            materia1=Integer.parseInt(cajamateria.getText());
+            mano1=Integer.parseInt(cajamano.getText());
+            codir1=Integer.parseInt(cajacodir.getText());
+            coind1=Integer.parseInt(cajacoind.getText());
+            dias1=Integer.parseInt(cajadias.getText());
+            kil1=Integer.parseInt(ck1.getText());
+            
+            Vtotaldiario1=materia1+mano1+codir1+coind1;
+            Vtotalunitario1=Vtotaldiario1/kil1;
+            Vtotalmensual1=Vtotaldiario1*dias1;
+                    
+                    
+                    //////////////////////////////////////////////////////////
+                    
+            materia2=Integer.parseInt(cajamateria2.getText());
+            mano2=Integer.parseInt(cajamano2.getText());
+            codir2=Integer.parseInt(cajacodir2.getText());
+            coind2=Integer.parseInt(cajacoind2.getText());
+            dias2=Integer.parseInt(cajadias2.getText());
+            kil2=Integer.parseInt(ck2.getText());
+            
+            Vtotaldiario2=materia2+mano2+codir2+coind2;
+            Vtotalunitario2=Vtotaldiario2/kil2;
+            Vtotalmensual2=Vtotaldiario2*dias2;
+            
+                    /////////////////////////////////////////////////////////
+                    
+            materia3=Integer.parseInt(cajamateria3.getText());
+            mano3=Integer.parseInt(cajamano3.getText());
+            codir3=Integer.parseInt(cajacodir3.getText());
+            coind3=Integer.parseInt(cajacoind3.getText());
+            dias3=Integer.parseInt(cajadias3.getText());
+            kil3=Integer.parseInt(ck3.getText());
+            
+            Vtotaldiario3=materia3+mano3+codir3+coind3;
+            Vtotalunitario3=Vtotaldiario3/kil3;
+            Vtotalmensual3=Vtotaldiario3*dias3;
+            
+            Vresfinal=Vtotalmensual1+Vtotalmensual2+Vtotalmensual3;
+            
+           JOptionPane.showMessageDialog(null,"el costo diario del queso fresco fue $" +Vtotaldiario1 +"\n" +"el costo unitario del queso fresco fue $" +Vtotalunitario1 +"\n "+"el costo mensual del queso fresco fue $" +Vtotalmensual1 +"\n"+"\nel costo diario del queso oaxaca fue $" +Vtotaldiario2 +" \n" +"el costo unitario del queso oaxaca fue $"  +Vtotalunitario2 +"\n" +"el costo mensual del queso fresco fue $" +Vtotalmensual2 +"\n"+"\nel costo diario de los chongos fue $" +Vtotaldiario3 +"\n" +"el costo unitario de los chongos fue $"  +Vtotalunitario3 +"\n" +"el costo mensual de  los chongos fue $" +Vtotalmensual3 +"\n"   + "\n \n \n El total de los costos fue de $" +Vresfinal);
+            
+          /* ESTE METODO ME PERMITE AGREGARLO A UNA CAJA CON SCROLL
+
+           JTextArea msg= new JTextArea("el costo diario del queso fresco fue $" +Vtotaldiario1 +"\n" +"el costo unitario del queso fresco fue $" +Vtotalunitario1 +"\n "+"el costo mensual del queso fresco fue $" +Vtotalmensual1 +"\n"
+                                                                                +"\nel costo diario del queso oaxaca fue $" +Vtotaldiario2 +" \n" +"el costo unitario del queso oaxaca fue $"  +Vtotalunitario2 +"\n" +"el costo mensual del queso fresco fue $" +Vtotalmensual2 +"\n"
+                                                                                +"\nel costo diario de los chongos fue $" +Vtotaldiario3 +"\n" +"el costo unitario de los chongos fue $"  +Vtotalunitario3 +"\n" +"el costo mensual de  los chongos fue $" +Vtotalmensual3 +"\n"   
+                                                                                + "\n \n \n El total de los costos fue de $" +Vresfinal);    
+           msg.setLineWrap(true);
+            msg.setWrapStyleWord(true);
+            JScrollPane scrollPane = new JScrollPane(msg);
+            JOptionPane.showMessageDialog(null, scrollPane);*/
+            
+            cajamateria.setText("");
+            cajamano.setText("");
+            cajacodir.setText("");
+            cajacoind.setText("");
+            cajadias.setText("");
+            ck1.setText("");
+                    
+            cajamateria2.setText("");
+            cajamano2.setText("");
+            cajacodir2.setText("");
+            cajacoind2.setText("");
+            cajadias2.setText("");
+            ck2.setText("");
+                    
+            cajamateria3.setText("");
+            cajamano3.setText("");
+            cajacodir3.setText("");
+            cajacoind3.setText("");
+            cajadias3.setText("");
+            ck3.setText("");
+        }
+        
     }
 
 
