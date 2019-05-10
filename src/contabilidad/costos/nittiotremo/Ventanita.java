@@ -172,7 +172,6 @@ private void configurarVentanita()
                            
                            fresco.setText("Queso Fresco");
                            fresco.setBounds(10,10,100,25);
-                          // caja.setBounds(155,50,100,25);
                            
                           
                           materia_prima.setText("Materia Prima");
@@ -204,7 +203,6 @@ private void configurarVentanita()
                            
                            oaxaca.setText("Queso Oaxaca");
                            oaxaca.setBounds(10,120,100,25);
-                          // caja.setBounds(155,50,100,25);
                            
                           
                           materia_prima2.setText("Materia Prima");
@@ -237,7 +235,6 @@ private void configurarVentanita()
 
                             chongos.setText("Chongos ");
                            chongos.setBounds(10,230,100,25);
-                          // caja.setBounds(155,50,100,25);
                            
                           
                           materia_prima3.setText("Materia Prima");
@@ -264,6 +261,27 @@ private void configurarVentanita()
                            txtdias3.setBounds(440,310,100,25);
                            cajadias3.setBounds(555,310,100,25);
                            
+                           
+                           //extras y boton
+                           
+                            txtagua.setText("Agua/Mes ");
+                          txtagua.setBounds(50,425,100,25);
+                          cajaagua.setBounds(135,425,100,25);
+                          
+                           txtluz.setText(" Luz/Mes");
+                           txtluz.setBounds(245,425,100,25);
+                           cajaluz.setBounds(330,425,100,25);
+
+                           txtgas.setText("Gas/Mes ");
+                           txtgas.setBounds(440,425,100,25);
+                            cajagas.setBounds(555,425,100,25);
+                            
+                         aceptar.setText("Aceptar  ");
+                        aceptar.setBounds(25,480,800,35);
+                        aceptar.addActionListener(this);   
+                                    
+                                    
+                                    
                //adds
                          
                           this.add(fresco);
@@ -308,8 +326,21 @@ private void configurarVentanita()
                           this.add(cajadias3);
                           this.add(txtdias3);
                          
+                          this.add(txtagua);
+                          this.add(txtluz);
+                          this.add(txtgas);
+                          this.add(cajaluz);
+                          this.add(cajaagua);
+                          this.add(cajagas);
+                          this.add(aceptar);
 
-
+                          this.add(totalmensual1);
+                          this.add(totaldiario1);
+                          this.add(totalmensual2);
+                          this.add(totaldiario2);
+                          this.add(totalmensual3);
+                          this.add(totaldiario3);
+                          this.add(total);
 }
  
 
